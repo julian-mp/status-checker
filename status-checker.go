@@ -5,12 +5,13 @@ import "fmt"
 func main() {
 	services := []string{"https://google.com", "https://amazon.com", "https://netflix.com"}
 	for _, service := range services {
-		serviceStatus := checkServiceStatus(service)
-		fmt.Println(serviceStatus)
+		c := make(chan map[string]interface{})
+		go checkServiceStatus(service, c)
+		fmt.Println(<-c)
 	}
 }
 
-func checkServiceStatus(service string) map[string]interface{} {
+func checkServiceStatus(service string, c chan map[string]interface{}) {
 	statusCode := getHTTPStatusCode(service)
-	return logStatus(service, statusCode)
+	c <- logStatus(service, statusCode)
 }
