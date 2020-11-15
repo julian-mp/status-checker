@@ -2,20 +2,26 @@ package main
 
 import (
 	"fmt"
-	"sync"
+	// "sync"
 )
 
 func main() {
-	wg := sync.WaitGroup{}
-	services := []string{"https://amazon.com", "https://google.com", "https://netflix.com"}
-	for i := range services {
-		wg.Add(1)
-		go func(service string) {
-			defer wg.Done()
-			checkServiceStatus(service)
-		}(services[i])
+	config := getConfig("./config.yaml")
+
+	for service := range config.Services {
+		fmt.Println(service)
 	}
-	wg.Wait()
+
+	// wg := sync.WaitGroup{}
+	// services := []string{"https://amazon.com", "https://google.com", "https://netflix.com"}
+	// for i := range services {
+	// 	wg.Add(1)
+	// 	go func(service string) {
+	// 		defer wg.Done()
+	// 		checkServiceStatus(service)
+	// 	}(services[i])
+	// }
+	// wg.Wait()
 }
 
 func checkServiceStatus(service string) {
