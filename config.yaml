@@ -1,12 +1,12 @@
 ---
 services:
-    - method: GET
+  - method: GET
     name: google
     url: 'https://google.com'
-    - method: GET
+  - method: GET
     name: amazon
     url: 'https://amazon.com'
-    - method: GET
-    name: amazon
-    url: 'https://amazon.com'
+  - method: GET
+    name: netflix
+    url: 'https://netflix.com'
 timeout: 30
