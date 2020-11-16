@@ -11,15 +11,15 @@ func main() {
 	wg := sync.WaitGroup{}
 	for i := range config.Services {
 		wg.Add(1)
-		go func(serviceURL string) {
+		go func(service ServiceConfig) {
 			defer wg.Done()
-			checkServiceStatus(serviceURL)
-		}(config.Services[i].URL)
+			checkServiceStatus(service)
+		}(config.Services[i])
 	}
 	wg.Wait()
 }
 
-func checkServiceStatus(service string) {
+func checkServiceStatus(service ServiceConfig) {
 	statusCode := getHTTPStatusCode(service)
 	fmt.Println(logStatus(service, statusCode))
 }

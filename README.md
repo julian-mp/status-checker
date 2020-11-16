@@ -1,6 +1,9 @@
-# Service Checker (Golang)
+# Service Checker (Go)
 
-Given a config yaml check the status of each service and write to a database the service name, status and time
+Features
+
+1. Check multiple endpoints (GET/POST/~~PUT/PATCH/DELETE~~) 
+2. ~~Support for services which call webhooks~~
 
 # Run
 

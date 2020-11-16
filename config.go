@@ -7,13 +7,17 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+// ServiceConfig is the config for a single service
+type ServiceConfig struct {
+	Name    string                 `yaml:"name"`
+	URL     string                 `yaml:"url"`
+	Method  string                 `yaml:"method"`
+	Payload map[string]interface{} `yaml:"payload"`
+}
+
 type config struct {
 	Timeout  int `yaml:"timeout"`
-	Services []struct {
-		Name   string `yaml:"name"`
-		URL    string `yaml:"url"`
-		Method string `yaml:"method"`
-	}
+	Services []ServiceConfig
 }
 
 func getConfig(filename string) config {

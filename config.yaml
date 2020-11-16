@@ -3,9 +3,12 @@ services:
   - method: GET
     name: google
     url: 'https://google.com'
-  - method: GET
+  - method: POST
     name: amazon
-    url: 'https://amazon.com'
+    url: 'https://hello.free.beeceptor.com'
+    payload:
+      hello: 'Hello'
+      world: 'World!'
   - method: GET
     name: netflix
     url: 'https://netflix.com'
