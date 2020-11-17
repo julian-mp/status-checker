@@ -1,15 +1,15 @@
 ---
 services:
-  - method: GET
-    name: google
+  - name: google
+    method: GET
     url: 'https://google.com'
-  - method: POST
-    name: amazon
+  - name: amazon
+    method: POST
     url: 'https://hello.free.beeceptor.com'
     payload:
       hello: 'Hello'
       world: 'World!'
-  - method: GET
-    name: netflix
+  - name: netflix
+    method: GET
     url: 'https://netflix.com'
 timeout: 30

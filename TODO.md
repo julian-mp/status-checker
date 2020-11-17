@@ -1,4 +1,7 @@
-~~1. Support POST requests~~
-2. Containerize service
-3. Add MongoDB
-4. Start the beast of webhook support
+1. ~~Support POST requests~~
+2. Containerize
+3. Decide on a model for a "status check"
+4. Add MongoDB
+5. Save status checks to database
+6. Add webhook receiver endpoint (solution for pairing requests will be to use url query params 💡)
+7. Support authentication
