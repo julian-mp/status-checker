@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    hostname: mongo
+    command: --serviceExecutor adaptive
+    volumes:
+      - ./volumes/mongo:/data/db
+    networks:
+      - stacey
+    ports:
+      - 27017:27017
+
+networks:
+  stacey:
