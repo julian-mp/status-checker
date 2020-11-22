@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-    client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://mongo:27017/developmen"))
+    client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://mongo:27017/development"))
     if err != nil {
         log.Fatal(err)
     }
@@ -23,4 +23,4 @@ func main() {
             log.Fatal(err)
     }
     defer client.Disconnect(ctx)
-    }
+}
